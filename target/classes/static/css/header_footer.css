@@ -1,0 +1,304 @@
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+
+i:hover, h1.title:hover{
+    color: #D3AC2B;
+}
+
+
+.hover{
+    color: #D3AC2B;
+}
+.hover>ul>li{
+    color: #D3AC2B;
+}
+
+/*pc header  */
+header{
+    z-index: 8;
+    width: 100%;
+    height: 70px
+}
+
+.con{
+    background-color: #333D51;
+    display: flex;
+    justify-content: space-between;
+    color: #F4F3EA;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.logo-wrap{
+    display: flex;
+}
+
+.logo-wrap>.img{
+    display: flex;
+    align-items: center;
+}
+
+.menu_wrap>ul{
+    display: flex;
+    height: 100%;
+}
+.menu_wrap>ul>li{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.menu_wrap>ul>li:hover{
+    color: #D3AC2B;
+}
+.menu_wrap>ul>li:hover>ul>li{
+    color: #F4F3EA;
+}
+
+.title{
+    font-family: Georgia;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/*submenu */
+
+.pc_more_btn.active>.sub_menu{
+    height: 143px;
+}
+.sub_menu{
+    overflow: hidden;
+    height: 0px;
+    background-color: #333D51;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transition: height 0.5s ease-in-out;
+    transform: translateX(-70%);
+}
+
+.sub_menu>li{
+    padding: 20px 40px;
+    border-top: 1px solid #F4F3EA;
+}
+
+.menu_wrap>ul>li>ul.sub_menu>li:hover{
+    color: #D3AC2B;
+}
+
+.menu_wrap{
+    width: 40%;
+
+}
+/*pc header:end */
+
+
+/*footer */
+.footer-con{
+    display: flex;
+    background-color: #333D51;
+}
+
+.footer_logo_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.footer_logo_wrap>img{
+    width:200px;
+    height: 250px;
+}
+
+.footer_Sitemap{
+    flex-grow: 1.3;
+    font-size: 20px;
+    color: #F4F3EA;
+    margin-left: 6%;
+}
+.sitemap_title_wrap>h1{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 30px 30px;
+}
+
+.sitemap_wrap>li{
+    padding: 5px 15px;
+}
+
+.sitemap_wrap{
+    margin-left: 15px;
+}
+
+.direction{
+    flex-grow: 1;
+}
+.direction_wrap{
+    width: 90%;
+    margin: 15px auto;
+}
+.direction_wrap>h1{
+    font-weight: bold;
+    font-size: 25px;
+    color: #F4F3EA;
+    padding: 10px 10px;
+
+    width: 20%;
+}
+
+iframe{
+
+    width: 400px;
+    height: 250px;
+}
+/*footer:end */
+
+@media (min-width: 1381px) {
+    .pc_header{
+        display: block;
+    }
+    .mobile_header{
+        display: none;
+    }
+    .mobile_side_bar{
+        display: none;
+    }
+}
+/*small mode  */
+@media (max-width: 1380px) {
+    .pc_header{
+        display: none;
+    }
+    .mobile_header{
+        display: block;
+        z-index: 10;
+    }
+
+    /*header */
+    .btn_wrap{
+        display: flex;
+        align-items: center;
+    }
+    .menu_expansion_burger{
+        display: flex;
+        align-items: center;
+        margin-right: 1%;
+    }
+    .menu_expansion_burger>i{
+        font-size: 30px;
+    }
+
+    .btn_wrap>*{
+        font-size: 25px;
+        margin: 0 20%;
+    }
+    .btn_wrap{
+      margin-left: 1%;
+    }
+
+    /*sidebar*/
+    .mobile_side_bar{
+        position: fixed;
+        z-index: 7;
+        opacity:0;
+        visibility: hidden;
+        background-color: rgba(0,0,0,0.5);
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+
+    .mobile_side_bar.active{
+        position: fixed;
+        z-index: 10;
+        visibility: visible;
+        opacity:1;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .mobile_side_bar> .mobile_side_bar__contents{
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+    }
+    .mobile_side_bar.active>.mobile_side_bar__contents{
+
+        transform: translateX(0);
+    }
+    .mobile_side_bar__body{
+        background-color: #333D51;
+    }
+    .mobile_side_bar__head{
+        background-color: #333D51;
+    }
+
+    .mobile_side_bar__body__menu_box>ul>li{
+        padding: 15px 0;
+        font-weight: bold;
+        font-family: 'CookieRun';
+        font-size: 20px;
+        text-align: center;
+        color: #F4F3EA;
+    }
+
+    .mobile_side_bar__body__menu_box>ul>li:hover{
+        color: #D3AC2B;
+    }
+
+   .mobile_sub_menu{
+        height: 0;
+        overflow: hidden;
+       transition: height 0.5s ease-in-out;
+    }
+
+  .more_btn.active>.mobile_sub_menu{
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .more_btn.active>.mobile_sub_menu>li:hover{
+     color: #D3AC2B;
+    }
+
+    .more_btn>p{
+        margin-bottom: 10px;
+    }
+
+    .mobile_side_bar__body__menu_box>ul>li>.mobile_sub_menu>li{
+        width: 100%;
+        display: block;
+        padding: 15px 20%;
+        background-color: #333D51;
+        color: #F4F3EA;
+    }
+
+
+
+}
+/*small mode:end  */
+
+/*mobile mode */
+@media (max-width: 768px) {
+        .btn_wrap{
+            display: none;
+        }
+
+    .footer-con{
+        display: block;
+    }
+    iframe{
+        margin: 0 auto;
+        padding-bottom: 20px;
+        padding-right: 0;
+        width: 300px;
+        height: 200px;
+
+    }
+
+    .direction_wrap{
+        width: 90%;
+    }
+
+}
+/*mobile mode:end */
