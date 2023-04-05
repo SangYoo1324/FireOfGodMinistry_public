@@ -1,0 +1,186 @@
+/*connect*/
+section.connect{
+    background-color:  #CBD0D8;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+}
+
+section.connect>.container{
+    width: 80%;
+    margin:0 auto;
+}
+
+h1.title_wrap{
+    color: #333D51;
+    font-size: 30px;
+    text-align: center;
+}
+
+.connect>.container>p{
+    color: #333D51;
+    font-size: 20px;
+    margin: 30px auto;
+    text-align: center;
+    width: 50%;
+}
+
+.connect>.container>a{
+    text-align: center;
+    display: block;
+    width: 150px;
+    padding: 15px 15px;
+    margin: 30px auto;
+    background-color: #333D51;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.connect>.container>a:hover{
+    background-color: #D3AC2B;
+}
+
+.bubble_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.bubble_wrap>*{
+    width: 30%;
+    height: 300px;
+    border-radius: 7px;
+    opacity: 0.7;
+}
+
+.visit{
+    background-image:
+            linear-gradient(to top,rgba(255,255,255,.9),rgba(255,255,255,.3)
+            ), url("../../images/church_background.jpg");
+
+}
+.visit:hover{
+    background-image:
+            linear-gradient(to top,rgba(211,172,43,.7),rgba(211,172,43,.2)
+            ), url("../../images/church_background.jpg");
+
+}
+
+.ministry_areas{
+
+    background-image:linear-gradient(to top,rgba(255,255,255,.9),rgba(255,255,255,.3)
+    ), url("../../images/header-cloud.jpg");
+
+}
+
+.ministry_areas:hover{
+
+    background-image:linear-gradient(to top,rgba(211,172,43,.7),rgba(211,172,43,.2)
+    ), url("../../images/header-cloud.jpg");
+
+}
+
+.submit_request{
+
+    background-image: linear-gradient(to top,rgba(255,255,255,.9),rgba(255,255,255,.3)
+    ),url("../../images/cross.jpg");
+
+}
+
+.submit_request:hover{
+
+    background-image: linear-gradient(to top,rgba(211,172,43,.7),rgba(211,172,43,.2)
+    ),url("../../images/cross.jpg");
+
+}
+
+
+.bubble_wrap>*>.inner_wrap{
+    margin: 0 auto;
+    margin-top: 40%;
+    width: 80%;
+}
+
+.bubble_wrap>*>.inner_wrap>a{
+    display: block;
+    font-family: "CookieRun Regular";
+    font-size: 15px;
+    background-color: #D3AC2B;
+    padding: 10px 15px;
+    margin-top: 60%;
+    margin-bottom: 15px;
+    width: 70%;
+    text-align: center;
+}
+
+.bubble_wrap>*:hover>.inner_wrap>a{
+    background-color: #333D51;
+    color: white;
+}
+
+.bubble_wrap>*>.inner_wrap>h1{
+    font-family: CookieRun;
+    font-size: 25px;
+}
+.bubble_wrap>*:hover>.inner_wrap>h1{
+    color: white;
+}
+
+/*connect:end*/
+
+/*mobile mode */
+@media (max-width: 768px) {
+    /*mobile:connect */
+    section.connect{
+        height: 1500px;
+    }
+
+    .connect>.container>p{
+        width: 80%;
+    }
+
+    .bubble_wrap{
+        display: block;
+    }
+    .bubble_wrap>*{
+        width: 100%;
+    }
+    .bubble_wrap>*>.inner_wrap>a{
+        margin-top:  0;
+    }
+    .bubble_wrap>*>.inner_wrap{
+        margin-top: 10%;
+        padding-top: 40%;
+    }
+
+    /*mobile:connect:end */
+
+    /*mobile:subscribe */
+    .form_wrap{
+        width: 90%;
+        height: 80%;
+    }
+
+    .bg h4 {
+        margin-top: 0rem;
+        font-size: 2rem;
+    }
+    .bg p{
+        font-size: 1.1rem;
+    }
+
+    .join_wrap{
+        display: block;
+    }
+    .join_wrap>a{
+        display: block;
+        width: 50%;
+        margin: 10px auto;
+    }
+    .join_wrap>input{
+        width: 80%;
+    }
+    /*mobile:subscribe:end */
+}
+/*mobile mode:end */

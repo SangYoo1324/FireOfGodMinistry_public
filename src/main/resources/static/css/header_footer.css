@@ -299,6 +299,9 @@ iframe{
     .direction_wrap{
         width: 90%;
     }
-
+    .direction_wrap>h1{
+        padding: 10px 40px;
+        width: 50%;
+    }
 }
 /*mobile mode:end */

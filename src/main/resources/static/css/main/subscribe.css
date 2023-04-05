@@ -1,0 +1,113 @@
+
+/*subscribe  */
+.bg{
+    position: relative;
+    padding-top: 70px;
+    width: 100%;
+    color: #333D51;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../../images/church_background.jpg') center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing:  3px;
+}
+
+.form_wrap{
+    width: 50%;
+    height: 70%;
+    background-color: rgba(244,243,234, 0.3);
+
+
+}
+
+.form_wrap>.title_wrap{
+    opacity: 1;
+    width: 80%;
+    margin: 60px auto;
+}
+
+.bg h4{
+    margin-top: 0rem;
+    font-size: 3rem;
+
+}
+.bg p{
+    font-size: 1.5rem;
+    margin: 0 0;
+}
+
+.join_wrap>input{
+    padding: 8px 10px;
+    width: 50%;
+    background-color: #F4F3EA;
+    border: 1px solid #333D51;
+    margin-right: 10px;
+}
+
+.join_wrap>a{
+    padding: 10px 15px;
+    width: 20%;
+    background-color: #D3AC2B;
+    opacity: 1;
+}
+
+
+.bg button{
+    position: absolute;
+    margin-top: 1rem;
+    bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    margin-top: 2rem;
+    animation: upDown 1s ease-in-out infinite;
+}
+
+@keyframes upDown{
+    0%{
+        bottom: 0.3rem;
+    }
+    50%{
+        bottom: 0rem;
+    }
+    100%{
+        bottom: 0.3rem;
+    }
+}
+/*subscribe:end  */
+
+/*mobile mode */
+@media (max-width: 768px) {
+    /*mobile:subscribe */
+    .form_wrap{
+        width: 90%;
+        height: 80%;
+    }
+
+    .bg h4 {
+        margin-top: 0rem;
+        font-size: 2rem;
+    }
+    .bg p{
+        font-size: 1.1rem;
+    }
+
+    .join_wrap{
+        display: block;
+    }
+    .join_wrap>a{
+        display: block;
+        width: 50%;
+        margin: 10px auto;
+    }
+    .join_wrap>input{
+        width: 80%;
+    }
+    /*mobile:subscribe:end */
+}

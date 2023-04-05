@@ -6,9 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/images\fgm-transparent .png">
-
-    <link rel="stylesheet" href="/css/header_footer.css">
-    <link rel="stylesheet" href="/css/main.css">
     <script src="https://kit.fontawesome.com/edff7358ca.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -16,176 +13,14 @@
 </head>
 <body>
 
-<!--pc header-->
-    <header class="pc_header fixed">
-        <div class="con">
-            <div class="logo-wrap">
-                <div class="img"><img class="h-[60px] w-[60px]" src= "/images/fgm-transparent .png" alt=""></div>
-                <h1 class="title">FIRE OF GOD MINISTRIES</h1>
-            </div>
-            <div class="menu_wrap">
-                <ul>
-                    <li>Programs/Services</li>
-                    <li>About Us</li>
-                    <li>Donate</li>
-                    <li class="relative pc_more_btn">More &nbsp; <i class="fa-solid fa-caret-down"></i>
-                    <ul class="sub_menu">
-                        <li>Contact</li>
-                        <li>Contributors</li>
-                    </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-<!--pc header:end-->
+{{>components/header}}
 
-<!--mobile header-->
-<header class="mobile_header fixed">
-    <div class="con">
-        <div class="btn_wrap ">
-            <div class="subscribe_btn"><i class="fa-solid fa-bell "></i></div>
-            <div class="search_btn"><i class="fa-solid fa-magnifying-glass"></i></div>
-        </div>
+{{>components/mainPageComp/mainSlide}}
 
-        <div class="logo-wrap">
-            <div class="img"><img class="h-[50px] w-[50px]" src= "/images/fgm-transparent .png" alt=""></div>
-            <h1 class="title">FIRE OF GOD MINISTRIES</h1>
-        </div>
+{{>components/mainPageComp/connect}}
 
-        <div class="menu_expansion_burger">
-            <i class="fa-solid fa-bars text-[20px] block"></i>
-        </div>
-    </div>
-</header>
-<!--mobile header:end-->
+{{>components/mainPageComp/subscribe}}
 
-<!--mobile sideBar -->
-<div class="mobile_side_bar inset-0 h-[100vh]">
-    <div class="mobile_side_bar__contents w-60 h-full ml-auto flex ">
-        <div class="mobile_side_bar__head  pt-[23px] pb-[23px]">
-            <i class="fa-solid fa-x text-white font-bold ml-auto block w-[10%] text-[20px]"></i></div>
-        <div class="mobile_side_bar__body  flex-grow h-full">
-            <div class="mobile_side_bar__body__menu_box">
-                <ul>
-                    <li>Programs/Services</li>
-                    <li>About Us</li>
-                    <li>Donate</li>
-                    <li class="relative more_btn">
-                        <p class="">More &nbsp;<i class="fa-solid fa-caret-down"></i></p>
-                        <ul class="mobile_sub_menu">
-                            <li>Contact</li>
-                            <li>Contributors</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-    </div>
-
-
-    </div>
-</div>
-<!--mobile sideBar:end -->
-
-<!--main_slide-->
-<section class="main_slide">
-    <div class="slide_wrap relative">
-        <div class="slide_1">
-            <div class="left_wrap">
-
-            </div>
-            <div class="right_wrap relative">
-                <div class="text_wrap">
-                    <h1 class="slide_title">Our Mission</h1>
-                    <p>- "Lorem ipsum dolor sit amet, consectetur adipisicing elit.pellat repudiandae!"</p>
-                    <p>- "Lorem ipsum dolor sit amet, consectetur adipisicing elit.pellat repudiandae!"</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="slide_2">
-            <div class="left_wrap"></div>
-            <div class="right_wrap relative">
-                <div class="text_wrap">
-                    <h1 class="slide_title">Our Vision</h1>
-                    <p>- "Lorem ipsum dolor sit amet, consectetur adipisicing elit.pellat repudiandae!"</p>
-                    <p>- "Lorem ipsum dolor sit amet, consectetur adipisicing elit.pellat repudiandae!"</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="slide_3">
-            <div class="left_wrap relative"></div>
-            <div class="right_wrap relative">
-                <div class="text_wrap">
-                    <h1 class="slide_title">Our Values</h1>
-                    <p>- "Lorem ipsum dolor sit amet, consectetur adipisicing elit.pellat repudiandae!"</p>
-                    <p>- "Lorem ipsum dolor sit amet, consectetur adipisicing elit.pellat repudiandae!"</p>
-
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</section>
-<!--main_slide:end-->
-
-<!--Connect-->
-<section class="connect">
-    <div class="container">
-        <h1 class="title_wrap">CONNECT</h1>
-        <p>We are so glad that you are here! We would love to help you get connected. Take a look at the
-            many ways you can take the next step and let us know how we can help!</p>
-
-        <a href="#">Our History</a>
-
-        <div class="bubble_wrap">
-            <div class="visit">
-                <div class="inner_wrap">
-                    <a href="#">Plan a visit</a>
-                    <h1>Thinking About Visiting?</h1>
-                </div>
-            </div>
-            <div class="ministry_areas">
-                <div class="inner_wrap">
-                    <a href="#">Ministry Areas</a>
-                    <h1>Interested in our groups?</h1>
-                </div>
-            </div>
-            <div class="submit_request">
-                <div class="inner_wrap">
-                    <a href="#">Submit a Request</a>
-                    <h1>Have a prayer request?</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--Connect-->
-
-
-<!--&lt;!&ndash; background  &ndash;&gt;-->
-<section class="subscribe">
-    <div class="bg first">
-
-        <div class="form_wrap">
-            <div class="title_wrap">
-                <h4>Stay Up to Date!</h4>
-                <p>Sign up below to be the first to know everything we have going on here! </p>
-            </div>
-
-            <div class="join_wrap">
-                <input type="text" placeholder="Enter Your Email">
-                <a href="#">Subscribe</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- background:end  -->
 
 <!--upcoming events-->
 
@@ -194,49 +29,7 @@
 <!--upcoming events-->
 
 
-<!-- footer -->
-<footer class="footer-bar w-[100%]">
-    <div class="footer-con h-full">
-        <div class="footer_logo_wrap">
-            <img src="/images/fgm-transparent2.png" alt="">
-        </div>
-        <div class="footer_Sitemap">
-            <div class="sitemap_title_wrap flex">
-                <h1>Sitemap</h1>
-            </div>
-            <div class="ul_wrap flex">
-                <ul class="sitemap_wrap">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Program/Service</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Donate</a></li>
-                </ul>
-                <ul class="sitemap_wrap">
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Contributors</a></li>
-                    <li><a href="">Admin</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="direction">
-            <div class="direction_wrap">
-                <h1>Direction</h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.524595987529!2d-122.
-            44071014910287!3d47.24544432074778!2m3!1f0!2
-            f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549055772da1305b%3A0x6f3b85e2bcf6e6bf!2sUniversity%
-            20of%20Washington%20Tacoma!5e0!3m2!1sen!2sus!4v1677749953190!5m2!1sen!2sus" width="600" height="450"
-                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-
-        </div>
-
-
-
-
-    </div>
-</footer>
-<!-- footer :end  -->
+{{>components/footer}}
 
 <script src="/js/main.js"></script>
 <script src="/js/header_footer.js"></script>
