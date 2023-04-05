@@ -1,6 +1,6 @@
 # Project Title
 
-## Fire of God Ministry
+### Fire of God Ministry
 
 ## Description
 
