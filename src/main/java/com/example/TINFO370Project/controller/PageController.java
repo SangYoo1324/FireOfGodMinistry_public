@@ -11,4 +11,15 @@ public class PageController {
         return "page/main";
     }
 
+    @GetMapping("/page/login")
+    public String login(){
+        return "page/login";
+
+    }
+
+    @GetMapping("/page/admin")
+    public String admin(){
+        return "page/admin";
+    }
+
 }
