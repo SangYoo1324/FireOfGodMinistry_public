@@ -12,7 +12,11 @@
     <title>Document</title>
 </head>
 <body>
-<a href="/oauth2/authorization/google">Google Login</a><br>
+<div class="btn_wrap">
+    <a class="create_account inline-block" href="/page/join">Create Account</a>
+    <a class="google_login inline-block" href="/oauth2/authorization/google">
+        Login with Google &nbsp;<i class="fa-brands fa-google"></i></a>
+</div>
 
 <label for="">ID</label>
 <input id="id_input" name="id_input" type="text">
@@ -32,9 +36,9 @@ $('.login_btn').on("click",()=>{
     //connecting to rest controller
     $.ajax({
         type: "POST",
-        url:"/login",
+        url:"/api/login",
         data: JSON.stringify(data),
-        contentType:"application/json",
+        contentType:"application/json; charset=utf-8",
         dataType: "json"
     }).done(function(resp){
         alert("Log-in Success");

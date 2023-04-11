@@ -21,6 +21,7 @@ public class PrincipalDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
             log.info("PrincipalDetialsService의 LoadByUsername() 실행됨");
         Users users = usersRepository.findByUsername(username).orElse(null);
+        log.info("LoadByUsername() 에서 추출한 usersInfo::::::"+users.toString());
         return new PrincipalDetails(users);
     }
 }

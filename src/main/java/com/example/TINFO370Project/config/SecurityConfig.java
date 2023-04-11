@@ -2,10 +2,9 @@ package com.example.TINFO370Project.config;
 
 
 
-import com.example.TINFO370Project.login.JwtAuthenticationFilter;
-import com.example.TINFO370Project.login.JwtAuthorizationFilter;
-import com.example.TINFO370Project.login.MyFilter1;
-import com.example.TINFO370Project.principal.PrincipalDetails;
+import com.example.TINFO370Project.Auth.PrincipalOAuth2UserService;
+import com.example.TINFO370Project.entity.Role;
+import com.example.TINFO370Project.login.CustomAuthProvider;
 import com.example.TINFO370Project.principal.PrincipalDetailsService;
 import com.example.TINFO370Project.repository.UsersRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,16 +12,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.logout.LogoutFilter;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.filter.CorsFilter;
 
 
@@ -31,14 +29,13 @@ import org.springframework.web.filter.CorsFilter;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-
-    private final UsersRepository usersRepository;
+    private final PrincipalOAuth2UserService principalOauth2UserService;
+    public final UsersRepository usersRepository;
     private final ObjectMapper objectMapper;
     private final PrincipalDetailsService principalDetailsService;
-    private final CorsFilter corsFilter;
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 
@@ -46,35 +43,29 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-
-                .formLogin().disable() // FormLogin 사용 X
-                .httpBasic().disable() // httpBasic 사용 X
                 .csrf().disable()// csrf 보안 사용 X
-                .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-                .addFilter(new JwtAuthorizationFilter(authenticationManager(),usersRepository))
-                .headers().frameOptions().disable()
-                .and()
-//                .addFilterBefore(new MyFilter1(), BasicAuthenticationFilter.class)
-                // 세션 사용하지 않으므로 STATELESS로 설정
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-
-                .and()
-                .addFilter(corsFilter)
+//                .addFilter(new JwtAuthenticationFilter(authenticationManager(),usersRepository))
+//                .addFilter(new JwtAuthorizationFilter(authenticationManager(),usersRepository))
+//                .and()
+//                .addFilter(corsFilter)
                 //== URL별 권한 관리 옵션 ==//
                 .authorizeHttpRequests(authorize->{
                             try{
                                 // 아이콘, css, js 관련
                                 // 기본 페이지, css, image, js 하위 폴더에 있는 자료들은 모두 접근 가능, h2-console에 접근 가능
                                 authorize                                                                                                  //google login redirectionURI
-                                        .requestMatchers("/css/**","/images/**","/js/**","/favicon.ico","/h2-console/**","/page/main/**","/login/oauth2/code/google","/api/join").permitAll()
+                                        .requestMatchers("/css/**","/images/**","/js/**","/favicon.ico","/h2-console/**","/page/main/**","/login/oauth2/code/google",
+                                                "/api/join/**","/api/login/**").permitAll()
                                         .requestMatchers("/page/login/**").permitAll() // 회원가입 접근 가능
-                                        .requestMatchers("/api/user/**").authenticated()
-                                        .requestMatchers("/api/admin/**").hasRole("ROLE_ADMIN")
+                                        .requestMatchers("/page/users/**").authenticated()
+                                        .requestMatchers("/api/admin/**","/page/admin/**").hasRole(Role.ROLE_ADMIN.toString())
                                         .anyRequest().denyAll()
                                         .and()
                                         //== 소셜 로그인 설정 ==//
                                         .oauth2Login()
                                         .loginPage("/page/login").defaultSuccessUrl("/page/main")
+                                        .userInfoEndpoint()
+                                        .userService(principalOauth2UserService);
                                 ;
 
 
@@ -105,8 +96,8 @@ public class SecurityConfig {
      */
     @Bean
     public AuthenticationManager authenticationManager() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(passwordEncoder());
+        CustomAuthProvider provider = new CustomAuthProvider();
+        provider.setPasswordEncoder(bCryptPasswordEncoder());
         provider.setUserDetailsService(principalDetailsService);
         return new ProviderManager(provider);
     }

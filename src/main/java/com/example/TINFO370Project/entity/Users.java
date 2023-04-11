@@ -26,18 +26,24 @@ public class Users {
     private String password;
     private Role roles;
 
-    private String refreshToken;
+    private String jwtToken;
 
     private String email;
 
+    private String provider;
+
+    private String providerId;
+
     @Builder
-    public Users(Long id, String username ,String password, Role roles, String refreshToken, String email) {
+    public Users(Long id, String username ,String password, Role roles, String jwtToken, String email,String provider,String providerId) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.roles = roles;
-        this.refreshToken = refreshToken;
+        this.jwtToken = jwtToken;
         this.email = email;
+        this.provider= provider;
+        this.providerId = providerId;
     }
 
 
@@ -54,8 +60,5 @@ public class Users {
         this.password = passwordEncoder.encode(this.password);
     }
 
-    public void updateRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
-    }
 
 }
