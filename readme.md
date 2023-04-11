@@ -4,12 +4,11 @@
 
 ## Description
 
-*Full-stack web Application project. 
-*Final outcome with modern responsive frontend design,
-*backend system with admin panel for posting events without coding
-*backend system with donation tracking
-*backend system with subscriber email
-
+* Full-stack web Application project. 
+* Final outcome with modern responsive frontend design,
+* backend system with admin panel for posting events without coding
+* backend system with donation tracking
+* backend system with subscriber email
 ## Getting Started
 
 ### Dependencies
