@@ -49,7 +49,7 @@ Soren Dugger
 
 Samuel B
 
-Noah Martinez
+Noah Kohki Martinez
 ## Version History
 * 0.2
     * Various bug fixes and optimizations
