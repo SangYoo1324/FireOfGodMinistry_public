@@ -2,19 +2,19 @@
 
 
 # for testing
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/tinfo370Testing
-    username: postgres
-    password: Qwdf3696!
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/tinfo370Testing
+#    username: postgres
+#    password: Qwdf3696!
 
 
 #for deploying
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://ec2-3-234-204-26.compute-1.amazonaws.com/ddna60m4ep296u
-#    username: rrjkahwvajyymo
-#    password: 6243eb68ab0c993c0897d5ad5f94a10087a644f93716fec8be116d30c4191541
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-3-234-204-26.compute-1.amazonaws.com/ddna60m4ep296u
+    username: rrjkahwvajyymo
+    password: 6243eb68ab0c993c0897d5ad5f94a10087a644f93716fec8be116d30c4191541
 
 #  profiles:
 #    include: oauth

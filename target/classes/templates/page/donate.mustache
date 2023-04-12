@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/images\fgm-transparent .png">
+    <script src="https://kit.fontawesome.com/edff7358ca.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--    paypal donation btn -->
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+    <title>FGM</title>
+</head>
+<body>
+
+<link rel="stylesheet" href="/css/donate.css">
+
+<style>
+
+    #paypal-donate-button-container{
+        width: 100%;
+        height: 100%;
+        flex-grow: 1;
+    }
+
+
+
+</style>
+{{>components/header}}
+<section class="title_wrap">
+    <div class="inner_wrap">
+        <div class="text_wrap">
+            <h1>WAYS TO GIVE</h1>
+            <div class="line w-[45%] h-[1px] bg-white"></div>
+            <p>Donations are always welcome if you any to give.
+                They are not required but are always appreciated.</p>
+        </div>
+    </div>
+
+</section>
+
+<!--placeholder plz fill out contents later-->
+<section class="h-[1000px] donation_contents">
+    <div class="donation_title_wrap">
+        <p>We are grateful for your support of the Fire of God Ministries! </p>
+        <p>If you have questions about donations, contact our contribution team at</p>
+        <p><b>contributions@fireofgodMinistry.com</b> or call <b>(253) 123-456.</b></p>
+    </div>
+
+    <div class="content_box">
+        <div class="head_wrap">
+            <ul>
+                <li class="active">Donate through APP</li>
+                <li>Other Options</li>
+            </ul>
+        </div>
+        <div class="main_wrap">
+            <ul>
+                <li class="active">
+                    <div class="donation_through_app_wrap">
+                        <h1>Give through the app</h1>
+                        <h1>One-time donations or repeat donations can be set up</h1>
+                        <div class="logo_button_wrap">
+                            <div class="logo flex">
+                                <div id="paypal-donate-button-container">
+                                    <h1>We Appreciate Your Donation!</h1>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+                </li>
+                <li>
+                    <div class="other_options_wrap">
+                        <h1>Other Giving Options</h1>
+                        <div>
+                            <center>
+                                <a href="https://pushpay.com/pay/_________">
+                                    <input type="button" value="Give"
+                                           formtarget="_blank" rel="noopener noreferrer" style="
+            align-content: center;
+            background: rgb(207,21,10);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.60em;
+border-bottom-left-radius: 5px;
+border-top-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
+height: 50px;
+width: 150px;
+border: none;
+color: white;
+font-weight: 500;
+letter-spacing: 1px;
+cursor: pointer;
+-webkit-appearance: none" />
+                                </a>
+                            </center>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+{{>components/footer}}
+
+<script>
+
+    //sandboxdonation::
+
+
+    PayPal.Donation.Button({
+        env: 'production',
+        hosted_button_id: 'C2HNXKW5NFTAE',
+        style: {
+            layout: 'vertical', // 버튼 레이아웃: 'vertical' or 'horizontal'
+            color: 'blue', // 버튼 색상: 'gold', 'blue', 'silver', 'black', 'white', 'transparent'
+            shape: 'pill', // 버튼 모양: 'pill', 'rect'
+            label: 'donate', // 버튼 라벨 텍스트
+            width: 300,
+            height: 100 // 버튼 높이(px)
+        },
+        image: {
+            src: 'https://res.cloudinary.com/hanbfrtij/image/upload/v1681254165/paypalDonateBtn_vz7jsm.png',
+            title: 'PayPal - The safer, easier way to pay online!',
+            alt: 'Donate with PayPal button'
+
+        },
+        onComplete: function (params) {
+            params.toString();
+            // Your onComplete handler
+        },
+    }).render('#paypal-donate-button-container');
+</script>
+
+<script src="/js/donation.js"></script>
+<script src="/js/header_footer.js"></script>
+</body>
+</html>

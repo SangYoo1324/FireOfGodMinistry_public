@@ -25,7 +25,7 @@ public class PageController {
 
     }
 
-    @GetMapping("/page/admin")
+    @GetMapping("/panel/admin")
     public String admin(){
 
         return "page/admin";
@@ -36,4 +36,25 @@ public class PageController {
         return "page/users";
     }
 
+    @GetMapping("/page/programservice")
+    public String programService(){
+        return "page/programService";
+    }
+    @GetMapping("/page/aboutus")
+    public String aboutUs(){
+        return "page/aboutUs";
+    }
+    @GetMapping("/page/donate")
+    public String donate(){
+        return "page/donate";
+    }
+
+    @GetMapping("/page/contact")
+    public String contact(){
+        return "page/contact";
+    }
+    @GetMapping("/page/contributors")
+    public String contributors(){
+        return "page/contributors";
+    }
 }

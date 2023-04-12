@@ -1,7 +1,6 @@
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\entity\Users.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\login\MyFilter1.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\entity\JwtToken.java
-C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\Auth\PrincipalOAuth2UserService.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\login\loginApiController.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\controller\PageController.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\repository\UsersRepository.java
@@ -12,4 +11,5 @@ C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Pr
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\principal\PrincipalDetailsService.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\service\UsersService.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\login\CustomAuthProvider.java
+C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\principal\PrincipalOAuth2UserService.java
 C:\Users\samue\IdeaProjects\TINFO370Project\src\main\java\com\example\TINFO370Project\config\WebMvcConfig.java

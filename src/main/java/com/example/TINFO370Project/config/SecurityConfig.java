@@ -2,7 +2,7 @@ package com.example.TINFO370Project.config;
 
 
 
-import com.example.TINFO370Project.Auth.PrincipalOAuth2UserService;
+import com.example.TINFO370Project.principal.PrincipalOAuth2UserService;
 import com.example.TINFO370Project.entity.Role;
 import com.example.TINFO370Project.login.CustomAuthProvider;
 import com.example.TINFO370Project.principal.PrincipalDetailsService;
@@ -12,16 +12,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.filter.CorsFilter;
 
 
 @Configuration
@@ -54,11 +49,11 @@ public class SecurityConfig {
                                 // 아이콘, css, js 관련
                                 // 기본 페이지, css, image, js 하위 폴더에 있는 자료들은 모두 접근 가능, h2-console에 접근 가능
                                 authorize                                                                                                  //google login redirectionURI
-                                        .requestMatchers("/css/**","/images/**","/js/**","/favicon.ico","/h2-console/**","/page/main/**","/login/oauth2/code/google",
+                                        .requestMatchers("/css/**","/images/**","/js/**","/favicon.ico","/h2-console/**","/page/**","/login/oauth2/code/google",
                                                 "/api/join/**","/api/login/**").permitAll()
                                         .requestMatchers("/page/login/**").permitAll() // 회원가입 접근 가능
                                         .requestMatchers("/page/users/**").authenticated()
-                                        .requestMatchers("/api/admin/**","/page/admin/**").hasRole(Role.ROLE_ADMIN.toString())
+                                        .requestMatchers("/panel/admin/**").hasRole("ADMIN")
                                         .anyRequest().denyAll()
                                         .and()
                                         //== 소셜 로그인 설정 ==//

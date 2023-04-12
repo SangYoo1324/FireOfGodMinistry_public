@@ -29,7 +29,7 @@ public class CustomAuthProvider extends DaoAuthenticationProvider {
         }
 
         if ("user".equals(name) && "password".equals(password)) {
-
+                log.info("provider에서 getAuthorities))))))))))))))))))"+authentication.getAuthorities().toString());
             return new UsernamePasswordAuthenticationToken(
                     name, password, authentication.getAuthorities());
         } else {

@@ -38,3 +38,6 @@ function slide_looping(slides,dots){
 }
 
 main_page_slideshow_animation();
+
+
+// Bell Btn slide

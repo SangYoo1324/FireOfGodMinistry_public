@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'LotteMartDream';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff') format('woff');
+}
+@font-face {
+    font-family: 'LotteMartDream';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'LotteMartDream';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff') format('woff');
+}
+.lottemartdream * {
+    font-family: 'LotteMartDream', sans-serif;
+}
+
+html > body {
+    font-family: 'LotteMartDream', sans-serif;
+}
+
+section.title_wrap{
+    height: 300px;
+}
+
+.inner_wrap{
+    width: 100%;
+    height: 300px;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/church_background.jpg') center center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.line{
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.text_wrap{
+    width: 50%;
+    color: #F4F3EA;
+    margin: 0px auto;
+    animation: title_animation 1s ease-in-out;
+}
+.text_wrap>h1{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.text_wrap>p{
+    font-size: 25px;
+    text-align: center;
+}
+
+.donation_contents{
+    background-color: #F4F3EA;
+    color: #333D51;
+}
+.donation_contents>p{
+
+}
+
+.donation_title_wrap{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+@keyframes title_animation {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }to{
+        transform: translateX(0);
+        opacity: 1;
+         }
+}
+
+
+.content_box{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.head_wrap>ul{
+    display: flex;
+}
+.head_wrap>ul>li{
+    flex-grow: 1;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #333D51;
+    color: white;
+    padding: 15px;
+}
+.main_wrap>ul>li{
+    display: none;
+    width: 100%;
+    height: 500px;
+    background-image: url("../images/donationImage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main_wrap>ul>li.active{
+    display: block;
+}
+
+.head_wrap>ul>li.active{
+    background-color: white;
+    color: #333D51
+}
+
+
+.donation_through_app_wrap{
+    padding: 30px;
+    text-align: center;
+}
+
+.donation_through_app_wrap>h1{
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo_button_wrap{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.logo>img{
+    width: 50%;
+    height: 50%;
+    margiin: 0;
+}
+
+.logo>h1{
+    width: 40%;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    height: 50%;
+
+}
+
+.logo_button_wrap{
+    width: 80%;
+}
+
+.donate-button{
+    width: 300px;
+    height: 100px;
+}
+#paypal-donate-button-container{
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+}
+
+img{
+    margin: 30px auto;
+    opacity: 0.8;
+}
+img:hover{
+    opacity: 1;
+}
