@@ -46,7 +46,7 @@ Sangbeom Yoo    [@SangYoo1324](https://sangbeomyooportfoliosite.netlify.app/)
 
 Soren Dugger
 
-Samuel B
+Samuel Borovets
 
 Noah Kohki Martinez
 ## Version History
