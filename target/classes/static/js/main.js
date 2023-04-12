@@ -18,7 +18,7 @@ function slide_looping(slides,dots){
             }
             $(slides.eq(i)).siblings().removeClass('active');
             // console.log(`slide-${i}removed`);
-        },4000*i);
+        },6000*i);
 
     }
 
@@ -33,7 +33,7 @@ function slide_looping(slides,dots){
 
     setInterval(function(){
         slide_looping(slides,null);
-    },12000);
+    },18000);
 
 }
 

@@ -5,7 +5,7 @@ section.login_wrap{
 }
 
 .title_wrap{
-    color: #333D51;
+    color: #000000;
     width: 60%;
     margin: 20px auto;
 }
@@ -31,7 +31,7 @@ h1{
 
 .login_form_wrap{
     height: 40vh;
-    background-color: #333D51;
+    background-color: #000000;
     width: 60%;
     margin: 10vh auto;
     display: flex;
@@ -54,7 +54,7 @@ h1{
 input{
     width: 75%;
     marign-left: 10px;
-    background-color: #333D51;
+    background-color: #000000;
     font-size: 22px;
     color: white;
     border-bottom: white solid 1px;

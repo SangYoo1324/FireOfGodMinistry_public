@@ -13,13 +13,13 @@ section.connect>.container{
 }
 
 h1.title_wrap{
-    color: #333D51;
+    color: #000000;
     font-size: 30px;
     text-align: center;
 }
 
 .connect>.container>p{
-    color: #333D51;
+    color: #000000;
     font-size: 20px;
     margin: 30px auto;
     text-align: center;
@@ -32,7 +32,7 @@ h1.title_wrap{
     width: 150px;
     padding: 15px 15px;
     margin: 30px auto;
-    background-color: #333D51;
+    background-color: #000000;
     border-radius: 5px;
     color: white;
     font-weight: bold;
@@ -115,7 +115,7 @@ h1.title_wrap{
 }
 
 .bubble_wrap>*:hover>.inner_wrap>a{
-    background-color: #333D51;
+    background-color: #000000;
     color: white;
 }
 
