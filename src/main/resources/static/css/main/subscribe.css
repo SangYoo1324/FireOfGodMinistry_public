@@ -4,7 +4,7 @@
     position: relative;
     padding-top: 70px;
     width: 100%;
-    color: #333D51;
+    color: #000000;
     background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../../images/church_background.jpg') center center;
     background-size: cover;
     background-attachment: fixed;
@@ -46,7 +46,7 @@
     padding: 8px 10px;
     width: 50%;
     background-color: #F4F3EA;
-    border: 1px solid #333D51;
+    border: 1px solid #000000;
     margin-right: 10px;
 }
 
