@@ -1,4 +1,4 @@
-package com.example.TINFO370Project.login;
+package com.example.TINFO370Project.auth;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;

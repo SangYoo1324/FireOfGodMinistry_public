@@ -1,6 +1,5 @@
-package com.example.TINFO370Project.principal;
+package com.example.TINFO370Project.entity;
 
-import com.example.TINFO370Project.entity.Users;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,21 +13,21 @@ import java.util.Map;
 
 @Slf4j
 @Data
-public class PrincipalDetails implements UserDetails, OAuth2User {
+public class CustomUserDetails implements UserDetails, OAuth2User {
 
-    private Users users;
+    private RegUsers regUsers;
 
     private Map<String, Object> attributes;
 
     //General Login
-    public PrincipalDetails(Users users) {
-        this.users = users;
+    public CustomUserDetails(RegUsers regUsers) {
+        this.regUsers = regUsers;
     }
 
     //OAuth Login
-    public PrincipalDetails(Users users, Map<String, Object> attributes){
+    public CustomUserDetails(RegUsers users, Map<String, Object> attributes){
 
-        this.users= users;
+        this.regUsers = users;
         this.attributes= attributes;
     }
 
@@ -46,9 +45,9 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new ArrayList<>();
-        log.info("GrantedAuthority Roles::::::::::::::::::"+users.getRoleList().toString());
+        log.info("GrantedAuthority Roles::::::::::::::::::"+ regUsers.getRoleList().toString());
         // Role SimpleGrantedAuthority로 변환하여 넘겨줌
-        authorities.add(new SimpleGrantedAuthority(users.getRoles().toString()));
+        authorities.add(new SimpleGrantedAuthority(regUsers.getRoles().toString()));
 
 //        authorities.add((GrantedAuthority) users.getRoleList());
         return authorities;
@@ -56,12 +55,12 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public String getPassword() {
-        return users.getPassword();
+        return regUsers.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return users.getUsername();
+        return regUsers.getUsername();
     }
 
     @Override

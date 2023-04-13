@@ -1,16 +1,15 @@
-package com.example.TINFO370Project.login;
+package com.example.TINFO370Project.api;
 
 
-import com.example.TINFO370Project.entity.Users;
-import com.example.TINFO370Project.principal.PrincipalDetails;
-import com.example.TINFO370Project.principal.PrincipalDetailsService;
+import com.example.TINFO370Project.entity.RegUsers;
+import com.example.TINFO370Project.entity.CustomUserDetails;
+import com.example.TINFO370Project.service.CustomUserDetailsService;
 import com.example.TINFO370Project.repository.UsersRepository;
-import com.example.TINFO370Project.service.UsersService;
+import com.example.TINFO370Project.service.RegUsersService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,8 +21,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 import static org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
 
@@ -39,24 +36,24 @@ public class loginApiController {
 
     private final UsersRepository usersRepository;
 
-    private final PrincipalDetailsService principalDetailsService;
+    private final CustomUserDetailsService customUserDetailsService;
 
-    private final UsersService usersService;
+    private final RegUsersService regUsersService;
 
     private final AuthenticationManager authenticationManager;
 
     @PostMapping("/api/login")
-    public ResponseEntity<Users> login(@RequestBody Users loginForm, HttpServletRequest request){
+    public ResponseEntity<RegUsers> login(@RequestBody RegUsers loginForm, HttpServletRequest request){
        log.info(loginForm.getUsername());
 
-       Users fromDb= usersRepository.findByUsername(loginForm.getUsername()).orElse(null);
+       RegUsers fromDb= (RegUsers) usersRepository.findByUsername(loginForm.getUsername());//.orElse(null);
 
        //Manually Authenticate from regular login Form
-        PrincipalDetails principalDetails =(PrincipalDetails) principalDetailsService.loadUserByUsername(loginForm.getUsername());
+        CustomUserDetails customUserDetails =(CustomUserDetails) customUserDetailsService.loadUserByUsername(loginForm.getUsername());
         Authentication authenticationToken =
-                new UsernamePasswordAuthenticationToken(fromDb.getUsername(), fromDb.getPassword(), principalDetails.getAuthorities());
+                new UsernamePasswordAuthenticationToken(fromDb.getUsername(), fromDb.getPassword(), customUserDetails.getAuthorities());
         log.info("AuthenticationToken:  "+authenticationToken.getDetails());
-        log.info(principalDetails.getAuthorities().toString());
+        log.info(customUserDetails.getAuthorities().toString());
 
         // Authenticate AuthenticationToken
         Authentication authentication = authenticationManager.authenticate(authenticationToken);
@@ -72,8 +69,8 @@ public class loginApiController {
     }
 
     @PostMapping("/api/join")
-    public String join(@RequestBody Users users) throws Exception {
-        usersService.signUp(users);
+    public String join(@RequestBody RegUsers regUsers) throws Exception {
+        regUsersService.signUp(regUsers);
         return "joined";
     }
 

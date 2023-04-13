@@ -2,10 +2,9 @@ package com.example.TINFO370Project.config;
 
 
 
-import com.example.TINFO370Project.principal.PrincipalOAuth2UserService;
-import com.example.TINFO370Project.entity.Role;
-import com.example.TINFO370Project.login.CustomAuthProvider;
-import com.example.TINFO370Project.principal.PrincipalDetailsService;
+import com.example.TINFO370Project.service.CustomOAuth2UserService;
+import com.example.TINFO370Project.auth.CustomAuthProvider;
+import com.example.TINFO370Project.service.CustomUserDetailsService;
 import com.example.TINFO370Project.repository.UsersRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -24,10 +23,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final PrincipalOAuth2UserService principalOauth2UserService;
+    private final CustomOAuth2UserService customOauth2UserService;
     public final UsersRepository usersRepository;
     private final ObjectMapper objectMapper;
-    private final PrincipalDetailsService principalDetailsService;
+    private final CustomUserDetailsService customUserDetailsService;
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
@@ -60,7 +59,7 @@ public class SecurityConfig {
                                         .oauth2Login()
                                         .loginPage("/page/login").defaultSuccessUrl("/page/main")
                                         .userInfoEndpoint()
-                                        .userService(principalOauth2UserService);
+                                        .userService(customOauth2UserService);
 
 
 
@@ -96,7 +95,7 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager() {
         CustomAuthProvider provider = new CustomAuthProvider();
         provider.setPasswordEncoder(bCryptPasswordEncoder());
-        provider.setUserDetailsService(principalDetailsService);
+        provider.setUserDetailsService(customUserDetailsService);
         return new ProviderManager(provider);
     }
 
