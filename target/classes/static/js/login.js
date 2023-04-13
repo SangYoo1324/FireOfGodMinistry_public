@@ -15,9 +15,9 @@ $('.login_btn').on("click",()=>{
         dataType: "json"
     }).done(function(resp){
         alert("Log-in Success");
-        location.href="/page/main";
+         location.href="/panel/admin";
     }).fail(function(error){
-        alert("Failed to Login"+JSON.stringify(error));
+        alert("Failed to Login");
         console.log(JSON.stringify(error));
     });
 });

@@ -61,7 +61,7 @@ public class SecurityConfig {
                                         .loginPage("/page/login").defaultSuccessUrl("/page/main")
                                         .userInfoEndpoint()
                                         .userService(principalOauth2UserService);
-                                ;
+
 
 
                                 // 원래 스프링 시큐리티 필터 순서가 LogoutFilter 이후에 로그인 필터 동작
@@ -74,7 +74,10 @@ public class SecurityConfig {
                             }
                         }
 
-                );
+                ).logout(logout-> logout
+                        .logoutUrl("/page/logout")
+                        .logoutSuccessUrl("/page/main")
+                        .invalidateHttpSession(true));
 
 
         return http.build();

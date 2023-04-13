@@ -17,13 +17,35 @@ h1.title_wrap{
     font-size: 30px;
     text-align: center;
 }
-
+.connect>.container>h1{
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out ;
+}
+.connect>.container>h1.active{
+    opacity: 1;
+    transform: translateX(0%);
+}
 .connect>.container>p{
     color: #000000;
     font-size: 20px;
     margin: 30px auto;
     text-align: center;
     width: 50%;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out ;
+}
+
+.connect>.container>p.active{
+    color: #000000;
+    font-size: 20px;
+    margin: 30px auto;
+    text-align: center;
+    width: 50%;
+    transform: translateX(0%);
+    opacity: 1;
 }
 
 .connect>.container>a{
@@ -108,7 +130,7 @@ h1.title_wrap{
     font-size: 15px;
     background-color: #D3AC2B;
     padding: 10px 15px;
-    margin-top: 60%;
+    margin-top: 40%;
     margin-bottom: 15px;
     width: 70%;
     text-align: center;
@@ -126,6 +148,8 @@ h1.title_wrap{
 .bubble_wrap>*:hover>.inner_wrap>h1{
     color: white;
 }
+
+
 
 /*connect:end*/
 

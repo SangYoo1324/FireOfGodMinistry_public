@@ -28,11 +28,11 @@ function slide_looping(slides,dots){
 
  function main_page_slideshow_animation(){
     let slides = $('.slide_wrap>*');
-    // let dots = $('.main-page__slide_dot >*');
-    slide_looping(slides,null);
+    let dots = $('.dots>ul>li');
+    slide_looping(slides,dots);
 
     setInterval(function(){
-        slide_looping(slides,null);
+        slide_looping(slides,dots);
     },18000);
 
 }
@@ -41,3 +41,22 @@ main_page_slideshow_animation();
 
 
 // Bell Btn slide
+let connect = document.querySelector('.connect>.container>p');
+let connectTitle = document.querySelector('.connect>.container>h1');
+let subscribeTitle = document.querySelector('.title_wrap>h4');
+let subscribePtag = document.querySelector('.title_wrap>p');
+let observer = new IntersectionObserver((e)=>{
+    console.log(e);
+    e.forEach((ele)=>{
+        if(ele.isIntersecting){
+            ele.target.className += ' active';
+        }
+        else
+            ele.target.classList.remove('active');
+    });
+});
+
+observer.observe(connectTitle);
+observer.observe(connect);
+observer.observe(subscribeTitle);
+observer.observe(subscribePtag);

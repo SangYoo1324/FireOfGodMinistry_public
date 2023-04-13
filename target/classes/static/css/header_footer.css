@@ -114,7 +114,7 @@ header{
 
 .footer_logo_wrap>img{
     width:200px;
-    height: 175px;
+    height: 250px;
 }
 
 .footer_Sitemap{
@@ -155,8 +155,8 @@ header{
 
 iframe{
 
-    width: 300px;
-    height: 175px;
+    width: 400px;
+    height: 250px;
 }
 /*footer:end */
 
@@ -295,13 +295,8 @@ iframe{
         margin: 0 auto;
         padding-bottom: 20px;
         padding-right: 0;
-<<<<<<< HEAD
         width: 300px;
         height: 100px;
-=======
-        width: 200px;
-        height: 75px;
->>>>>>> cd2df4cbf2c3cfd3162d976176c0a8d8b8b0e7ca
 
     }
 
