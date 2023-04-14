@@ -126,11 +126,14 @@ header{
 .sitemap_title_wrap>h1{
     font-size: 25px;
     font-weight: bold;
-    padding: 30px 30px;
+    padding: 20px 20px;
 }
 
 .sitemap_wrap>li{
     padding: 5px 15px;
+}
+.ul_wrap{
+    margin-bottom: 30px;
 }
 
 .sitemap_wrap{
@@ -155,8 +158,8 @@ header{
 
 iframe{
 
-    width: 400px;
-    height: 250px;
+    width: 300px;
+    height: 150px;
 }
 /*footer:end */
 
@@ -296,7 +299,7 @@ iframe{
         padding-bottom: 20px;
         padding-right: 0;
         width: 300px;
-        height: 100px;
+        height: 150px;
 
     }
 
