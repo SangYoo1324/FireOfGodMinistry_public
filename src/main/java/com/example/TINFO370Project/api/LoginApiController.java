@@ -5,7 +5,7 @@ import com.example.TINFO370Project.entity.RegUsers;
 import com.example.TINFO370Project.entity.CustomUserDetails;
 import com.example.TINFO370Project.service.CustomUserDetailsService;
 import com.example.TINFO370Project.repository.UsersRepository;
-import com.example.TINFO370Project.service.RegUsersService;
+import com.example.TINFO370Project.service.UsersService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +27,7 @@ import static org.springframework.security.web.context.HttpSessionSecurityContex
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-public class loginApiController {
+public class LoginApiController {
 
 
 
@@ -38,7 +38,7 @@ public class loginApiController {
 
     private final CustomUserDetailsService customUserDetailsService;
 
-    private final RegUsersService regUsersService;
+    private final UsersService usersService;
 
     private final AuthenticationManager authenticationManager;
 
@@ -70,7 +70,7 @@ public class loginApiController {
 
     @PostMapping("/api/join")
     public String join(@RequestBody RegUsers regUsers) throws Exception {
-        regUsersService.signUp(regUsers);
+        usersService.signUp(regUsers);
         return "joined";
     }
 

@@ -48,12 +48,12 @@ public class SecurityConfig {
                                 // 아이콘, css, js 관련
                                 // 기본 페이지, css, image, js 하위 폴더에 있는 자료들은 모두 접근 가능, h2-console에 접근 가능
                                 authorize                                                                                                  //google login redirectionURI
-                                        .requestMatchers("/css/**","/images/**","/js/**","/favicon.ico","/h2-console/**","/page/**","/login/oauth2/code/google",
-                                                "/api/join/**","/api/login/**").permitAll()
+                                        .requestMatchers("/css/**","/images/**","/js/**","/favicon.ico","/h2-console/**","/page/**","/login/oauth2/code/google"
+                                                ,"/api/**").permitAll()
                                         .requestMatchers("/page/login/**").permitAll() // 회원가입 접근 가능
                                         .requestMatchers("/page/users/**").authenticated()
                                         .requestMatchers("/panel/admin/**").hasRole("ADMIN")
-                                        .anyRequest().denyAll()
+                                        .anyRequest().permitAll()
                                         .and()
                                         //== 소셜 로그인 설정 ==//
                                         .oauth2Login()

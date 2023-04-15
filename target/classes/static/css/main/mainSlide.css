@@ -1,4 +1,7 @@
 @import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+section{
+    font-family: "CookieRun Regular";
+}
 
 section.main_slide{
     padding-top: 70px;

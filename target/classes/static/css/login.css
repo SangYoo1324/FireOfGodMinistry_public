@@ -1,3 +1,7 @@
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+section{
+    font-family: "CookieRun Regular";
+}
 section.login_wrap{
     padding-top:  100px;
     background-color: #F4F3EA;

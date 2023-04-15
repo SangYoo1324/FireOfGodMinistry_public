@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.sql.Timestamp;
 
@@ -14,6 +15,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class Subscriber extends Users {
     @Enumerated(EnumType.STRING)
+    @Column(length = 32, columnDefinition = "varchar(255) default 'TYPE_REGULAR'")
     private SubscribeType subType;
 
     @Builder

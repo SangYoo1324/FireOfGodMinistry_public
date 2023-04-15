@@ -1,14 +1,31 @@
-section:nth-child(2n-1){
-    background-color: #F4F3EA;
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+section{
+    font-family: "CookieRun Regular";
 }
+
+section:nth-child(2n+1){
+    background-color: #F4F3EA;
+    height: 500px;
+    overflow: scroll;
+}
+
 section:nth-child(2n){
-    background-color: #000000;
+    background-color: black;
+    height: 500px;
+    overflow: scroll;
+    color: white;
+}
+
+
+section:nth-child(2n)>table{
+    color: white;
 }
 
 
 section.title_wrap{
     padding-top: 70px;
     height: 300px;
+    overflow: hidden;
 }
 
 .inner_wrap{
@@ -52,6 +69,169 @@ section.title_wrap{
     color: black;
 }
 
+
+
+/*User info Manager */
+.user_info_list>h1{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 5%;
+    padding-top: 3%;
+}
+.user_info_list>.p_wrap{
+    padding: 20px 0;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.subscriber_info_list>h1{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 5%;
+    padding-top: 3%;
+}
+.subscriber_info_list>.p_wrap{
+    padding: 20px 0;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.update_btn{
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+.update_btn:hover{
+    background-color: #0a53be;
+}
+.delete_btn{
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+.delete_btn:hover{
+background-color: red;
+}
+/*User info Manager:end */
+
+/*modal*/
+.modal-dialog{
+    max-width: 700px;
+    height: 30vh;
+}
+.modal-content{
+    width: 700px;
+    height: 30vh;
+    margin: 20vh auto;
+    margin-bottom: 0;
+}
+label{
+    width: 25%;
+    padding-right: 10px;
+}
+.input_wrap{
+    height: 40px;
+    margin: 10px;
+}
+.input_wrap>input{
+    width: 80%;
+}
+
+.modal-footer{
+    background-color: black;
+}
+/*modal:end*/
+
+/*ckEditor */
+
+.ck-editor__editable_inline {
+    min-height: 600px;
+    color: black;
+}
+.ck-toolbar_grouping{
+    margin: 0 auto;
+    width: 50%;
+    /*max-width: 50%;*/
+}
+.ck.ck-reset, .ck.ck-reset_all, .ck.ck-reset_all *{
+    margin: 0 auto;
+}
+.ck.ck-editor__main>.ck-editor__editable{
+    margin: 0 auto;
+    overflow: scroll;
+    max-height: 500px;
+}
+/*ckEditor */
+
+/*event Post */
+section.event_post{
+    overflow: hidden;
+    height: 1200px;
+    padding: 30px;
+}
+
+.event_post_container{
+    width: 50%;
+    margin-left: 5%;
+}
+.post_title_wrap{
+    display: flex;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.sub_title_wrap{
+    display: flex;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.post_title,.post_sub_title{
+    width: 100%;
+    font-size: 25px;
+    color: #1e2125;
+}
+
+.event_post>h1{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 5%;
+    padding-top: 3%;
+}
+.event_post>.p_wrap{
+    padding: 20px 0;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+.dashboard_btn_wrap>.submit-btn{
+    display: block;
+    width: 170px;
+    font-size: 25px;
+    padding: 2%;
+    margin-left: auto;
+}
+
+.thumbnail_container{
+    width: 40%;
+    margin-right: 5%;
+}
+
+.image_input_wrap{
+    margin-left: 5%;
+    font-size: 23px;
+}
+
+.image_input_wrap>img{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width:100%;
+    height:300px;
+}
+
+/*event Post:end */
 /*mobile mode */
 @media (max-width: 768px) {
         .text_wrap>h1{

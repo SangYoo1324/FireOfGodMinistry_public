@@ -5,6 +5,7 @@ import com.example.TINFO370Project.entity.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Timestamp;
@@ -21,6 +22,7 @@ public class RegUsers extends Users{
     private String username;
     private String password;
     @Enumerated(EnumType.STRING)
+    @Column(length = 32, columnDefinition = "varchar(255) default 'ROLE_GUEST'")
     private Role roles;
     private String jwtToken;
     private String provider;

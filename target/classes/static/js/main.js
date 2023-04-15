@@ -40,19 +40,26 @@ function slide_looping(slides,dots){
 main_page_slideshow_animation();
 
 
-// Bell Btn slide
+// Observation slide
 let connect = document.querySelector('.connect>.container>p');
 let connectTitle = document.querySelector('.connect>.container>h1');
 let subscribeTitle = document.querySelector('.title_wrap>h4');
 let subscribePtag = document.querySelector('.title_wrap>p');
+let event_title = document.querySelector('.event_title_wrap');
+let event_box = document.querySelectorAll('.event_box_wrap>.event_box');
+
+
+
 let observer = new IntersectionObserver((e)=>{
     console.log(e);
     e.forEach((ele)=>{
         if(ele.isIntersecting){
+            console.log(ele.isIntersecting);
             ele.target.className += ' active';
         }
         else
             ele.target.classList.remove('active');
+                console.log("remove");
     });
 });
 
@@ -60,3 +67,33 @@ observer.observe(connectTitle);
 observer.observe(connect);
 observer.observe(subscribeTitle);
 observer.observe(subscribePtag);
+event_box.forEach((e)=>{
+    observer.observe(e);
+});
+observer.observe(event_title);
+
+//subscribe btn
+$('.subscribe_btn').on('click',function (){
+
+    let data = {
+        email : $('#subscribe_input').val()
+    }
+
+    console.log(JSON.stringify(data));
+
+    $.ajax({
+        type: "POST",
+        url:"/api/subscribe",
+        data: JSON.stringify(data),
+        contentType:"application/json; charset=utf-8",
+        // dataType: "json",
+        success: function(){
+            alert(`Subscription complete!`);
+            window.location.reload();
+        },
+        error: function(err){
+            console.log(err);
+            alert("Please input valid email address!"+err);
+       }
+    });
+});

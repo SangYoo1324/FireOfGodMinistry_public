@@ -13,25 +13,25 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    @Bean
-    public CorsFilter corsFilter(){
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        // 내 서버가 응답할때 json 을 js에서 처리할수 잇게 할지 설정
-        config.setAllowCredentials(true);
-        config.addAllowedOriginPattern("*"); // 모든 ip에 응답 허용
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*"); // Get,Post, Delete, Patch etc
-        source.registerCorsConfiguration("/api/**",config);
-        return new CorsFilter(source);
-    }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry){
-        registry.addMapping("")
-                .allowedOrigins("http://localhost:3000")
-                .allowedMethods("OPTIONS","GET","POST","PATCH","DELETE");
-    }
+//    @Bean
+//    public CorsFilter corsFilter(){
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CorsConfiguration config = new CorsConfiguration();
+//        // 내 서버가 응답할때 json 을 js에서 처리할수 잇게 할지 설정
+//        config.setAllowCredentials(true);
+//        config.addAllowedOriginPattern("*"); // 모든 ip에 응답 허용
+//        config.addAllowedHeader("*");
+//        config.addAllowedMethod("*"); // Get,Post, Delete, Patch etc
+//        source.registerCorsConfiguration("/api/**",config);
+//        return new CorsFilter(source);
+//    }
+//
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry){
+//        registry.addMapping("")
+//                .allowedOrigins("http://localhost:3000")
+//                .allowedMethods("OPTIONS","GET","POST","PATCH","DELETE");
+//    }
 
 
     //    @Override

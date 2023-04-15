@@ -31,7 +31,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         OAuth2User oAuth2User = super.loadUser(userRequest);
         log.info("from PrincipalOauth2UserService==> getAttributes: "+oAuth2User.getAttributes());
 
-        String provider = "GOOGLE_"+userRequest.getClientRegistration().getClientId(); // Google
+        String provider = "GOOGLE";//+userRequest.getClientRegistration().getClientId(); // Google
         String providerId = oAuth2User.getName();
         String email = oAuth2User.getAttribute("email");
         String username = oAuth2User.getAttribute("name");
