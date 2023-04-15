@@ -140,13 +140,24 @@
         <div class="thumbnail_container">
             <div class="image_input_wrap ml-[10%]">
                 <label class="w-[100%] pb-[10px]" for="">Thumbnail Image       (Required)</label>
-                <input id="file" type="file" name="file" >
-
-                <img src="https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png" alt="">
+                <input id="file" type="file" name="file" onchange="setThumbnail(event);" >
+                <div class="img_wrap relative h-[400px]">
+                    <img class="absolute" src="https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png" alt="">
+<!--                    <img class="absolute" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-PO5SFMY7Flgz0rl2oQwd16VOOsoIwYyIB4VpM6A&s" alt="">-->
+                </div>
 
                 <p class="mb-[10px]">- This Thumbnail Image will be shown as the title image for the event posting.</p>
                 <p>- Also, please avoid using high resolution and complex
                     image because Thumbnail size will be auto-sized to 300 x150.</p>
+                <div class="sub_title_wrap mt-[20px]">
+                    <label for="post_title" class="font-bold text-[25px]">SET DATE</label>
+                    <input type="date" id="date" name="trip-start"
+                           value="2023-04-11"
+                           min="2018-01-01" max="2024-12-31"
+                        class="text-black  text-[20px] p-[5px]"
+                    >
+                </div>
+
             </div>
         </div>
     </div>

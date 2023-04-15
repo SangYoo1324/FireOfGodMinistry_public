@@ -1,7 +1,7 @@
 package com.example.TINFO370Project.service;
 
 import com.example.TINFO370Project.entity.CustomUserDetails;
-import com.example.TINFO370Project.entity.enums.Role;
+import com.example.TINFO370Project.entity.Role;
 import com.example.TINFO370Project.entity.RegUsers;
 import com.example.TINFO370Project.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;

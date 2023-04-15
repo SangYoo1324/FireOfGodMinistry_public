@@ -1,11 +1,9 @@
 package com.example.TINFO370Project.entity;
 
 
-import com.example.TINFO370Project.entity.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.annotations.ColumnDefault;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.sql.Timestamp;
@@ -17,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Slf4j
 @DiscriminatorValue("REGULAR_USER_INDICATOR")
+@AllArgsConstructor
 public class RegUsers extends Users{
 
     private String username;

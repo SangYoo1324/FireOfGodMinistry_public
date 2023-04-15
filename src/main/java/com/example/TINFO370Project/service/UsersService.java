@@ -3,7 +3,7 @@ package com.example.TINFO370Project.service;
 
 import com.example.TINFO370Project.entity.Subscriber;
 import com.example.TINFO370Project.entity.Users;
-import com.example.TINFO370Project.entity.enums.Role;
+import com.example.TINFO370Project.entity.Role;
 import com.example.TINFO370Project.entity.RegUsers;
 import com.example.TINFO370Project.entity.enums.SubscribeType;
 import com.example.TINFO370Project.repository.UsersRepository;

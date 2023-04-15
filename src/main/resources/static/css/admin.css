@@ -224,7 +224,7 @@ section.event_post{
     font-size: 23px;
 }
 
-.image_input_wrap>img{
+.image_input_wrap>.img_wrap>img{
     margin-top: 15px;
     margin-bottom: 15px;
     width:100%;

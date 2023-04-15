@@ -1,4 +1,4 @@
-package com.example.TINFO370Project.entity.enums;
+package com.example.TINFO370Project.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

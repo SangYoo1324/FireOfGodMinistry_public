@@ -13,9 +13,9 @@ import java.sql.Timestamp;
 @Entity
 @Data
 @NoArgsConstructor
+@DiscriminatorValue("SUBSCRIBER_INDICATOR")
 public class Subscriber extends Users {
     @Enumerated(EnumType.STRING)
-    @Column(length = 32, columnDefinition = "varchar(255) default 'TYPE_REGULAR'")
     private SubscribeType subType;
 
     @Builder

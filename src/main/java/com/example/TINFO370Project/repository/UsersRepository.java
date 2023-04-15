@@ -26,7 +26,7 @@ public interface UsersRepository extends JpaRepository<Users,Long> {
 
     @Query(value = "select users.id,users.users_category,users.creationDate," +
             "regUsers.username,regUsers.password,regUsers.jwttoken,regUsers.providerid,"+
-            " COALESCE(subscriber.subType, 'TYPE_REGULAR') as subType"+
+            " subscriber.subType"+
             ",COALESCE(users.emailaddr,'No Email Provided') as emailAddr,COALESCE(regUsers.roles,'ROLE_GUEST') as Roles," +
             "COALESCE(regUsers.provider,'Non-SocialLogin') as provider"+
             " from users left join regUsers on users.id = regUsers.id " +

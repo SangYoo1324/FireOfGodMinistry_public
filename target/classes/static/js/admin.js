@@ -61,6 +61,52 @@ $('.save_update_sub').click(function (){
 });
 //save update btn_modal
 
+//Thumbnail snapshot
+function setThumbnail(event){
+    let reader = new FileReader();
+
+    reader.onload = function(event){
+        let img = document.createElement("img");
+        img.setAttribute("src",event.target.result);
+        img.style.position= 'absolute';
+        let imgs = document.querySelectorAll('.img_wrap>img');
+        if(imgs.length>1){
+            imgs[1].remove();
+        }
+
+        document.querySelector(".img_wrap").appendChild(img);
+    };
+
+
+
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+
+// Sending EventPost
+$('.submit-btn').on('click',function(){
+    let form_data_with_pic = new FormData();
+
+    form_data_with_pic.append("title",$('.post_title').val());
+    form_data_with_pic.append("subTitle",$('.post_sub_title').val());
+    form_data_with_pic.append("body",editor.getData());
+    form_data_with_pic.append("date",$('#date').val());
+
+    //append thumbnail data
+    let file = $('#file')[0].files[0];
+    form_data_with_pic.append("file",file);
+    console.log(file);
+
+    console.log(form_data_with_pic.get("title"));
+    console.log(form_data_with_pic.get("subTitle"));
+    console.log(form_data_with_pic.get("body"));
+    console.log(form_data_with_pic.get("date"));
+    console.log(form_data_with_pic.get("file"));
+});
+
+
+
+
 
 // CK5 Editor
 // CKEditor
