@@ -97,3 +97,13 @@ $('.subscribe_btn').on('click',function (){
        }
     });
 });
+
+//Event Modal
+$('.view_detail').on('click',function() {
+    console.log($(this).siblings().eq(1).children().eq(1).html());
+    let title = $(this).siblings().eq(1).children().eq(0).html()
+    let body = $(this).attr('data-bs-body');
+    console.log(body);
+    $('.modal-title').html(title);
+    $('.modal_con ').html(body);
+});

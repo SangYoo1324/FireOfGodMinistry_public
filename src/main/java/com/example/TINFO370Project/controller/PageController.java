@@ -1,8 +1,10 @@
 package com.example.TINFO370Project.controller;
 
+import com.example.TINFO370Project.entity.Article;
 import com.example.TINFO370Project.entity.RegUsers;
 import com.example.TINFO370Project.entity.Subscriber;
 import com.example.TINFO370Project.entity.Users;
+import com.example.TINFO370Project.repository.ArticleRepository;
 import com.example.TINFO370Project.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,14 +23,19 @@ import java.util.stream.Collectors;
 public class PageController {
 
     private final UsersRepository usersRepository;
+    private final ArticleRepository articleRepository;
 
 
     @GetMapping("/page/main")
-    public String main(){
+    public String main(Model model){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object userDetails =  authentication.getPrincipal();
         log.info("LogIn status::::::::::::"+userDetails.toString());
         log.info("Is Authenticated::::::::::::::"+authentication.isAuthenticated());
+
+        //EventPost Model import
+        List<Article> articleList = articleRepository.findAll();
+        model.addAttribute("eventPost",articleList);
         return "page/main";
     }
 

@@ -7,80 +7,27 @@
     </div>
 
     <div class="event_box_wrap">
+{{#eventPost}}
 <!--      box -->
         <div class="event_box">
             <div class="thumbnail">
-                <img src="/images/cross.jpg" alt="">
+                <img src={{thumbnailUrl}} alt="">
             </div>
             <div class="box_title_wrap">
-                <h1>Easter Egg Hunt!</h1>
-                <p>Get together for easter egg hunt.</p>
+                <h1>{{title}}</h1>
+                <p>{{subTitle}}</p>
             </div>
             <div class="calendar">
                 <i class="fa-solid fa-calendar"></i>
-                <p>04-14-2023</p>
+                <p>{{date}}</p>
             </div>
             <button class="view_detail"
                     data-bs-toggle="modal" data-bs-target="#event_modal"
+                    data-bs-body={{body}}
                     data-category="1">Check Detail</button>
             </div>
         <!--      box -->
-
-        <!--      box -->
-        <div class="event_box">
-            <div class="thumbnail">
-                <img src="/images/cross.jpg" alt="">
-            </div>
-            <div class="box_title_wrap">
-                <h1>Easter Egg Hunt!</h1>
-                <p>Get together for easter egg hunt.</p>
-            </div>
-            <div class="calendar">
-                <i class="fa-solid fa-calendar"></i>
-                <p>04-14-2023</p>
-            </div>
-            <button class="view_detail"
-                    data-bs-toggle="modal" data-bs-target="#event_modal"
-                    data-category="1">Check Detail</button>
-        </div>
-        <!--      box -->
-        <!--      box -->
-        <div class="event_box">
-            <div class="thumbnail">
-                <img src="/images/cross.jpg" alt="">
-            </div>
-            <div class="box_title_wrap">
-                <h1>Easter Egg Hunt!</h1>
-                <p>Get together for easter egg hunt.</p>
-            </div>
-            <div class="calendar">
-                <i class="fa-solid fa-calendar"></i>
-                <p>04-14-2023</p>
-            </div>
-            <button class="view_detail"
-                    data-bs-toggle="modal" data-bs-target="#event_modal"
-                    data-category="1">Check Detail</button>
-        </div>
-        <!--      box -->
-        <!--      box -->
-        <div class="event_box">
-            <div class="thumbnail">
-                <img src="/images/cross.jpg" alt="">
-            </div>
-            <div class="box_title_wrap">
-                <h1>Easter Egg Hunt!</h1>
-                <p>Get together for easter egg hunt.</p>
-            </div>
-            <div class="calendar">
-                <i class="fa-solid fa-calendar"></i>
-                <p>04-14-2023</p>
-            </div>
-            <button class="view_detail"
-                    data-bs-toggle="modal" data-bs-target="#event_modal"
-                    data-category="1">Check Detail</button>
-        </div>
-        <!--      box -->
-
+    {{/eventPost}}
         </div>
 
 
@@ -88,12 +35,13 @@
 
 </section>
 
-<!--Users Info Manager Modal -->
+<!--Event Detail Modal -->
+
 <div class="modal fade" id="event_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Easter Egg Hunt!</h5>
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
             </div>
             <div class="modal-body">
                 <div class="modal_con block">
@@ -108,6 +56,9 @@
     </div>
 </div>
 </div>
-<!--User Info Manager Modal -->
-
+<!--Event Detail Modal  -->
 <script src="/js/main.js"></script>
+<script>
+    //eventPost Date Format
+    $('.calendar>p').html($('.calendar>p').html().substring(0,11));
+</script>

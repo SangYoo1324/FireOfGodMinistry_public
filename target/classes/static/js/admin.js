@@ -102,6 +102,23 @@ $('.submit-btn').on('click',function(){
     console.log(form_data_with_pic.get("body"));
     console.log(form_data_with_pic.get("date"));
     console.log(form_data_with_pic.get("file"));
+
+    $.ajax({
+        data: form_data_with_pic,
+        type: "POST",
+        url: "/api/article",
+        cache: false,
+        contentType: false,
+        enctype: 'multipart/form-data',
+        processData: false,
+        success: function (url) {
+            alert("Success uploading event POST :::::" );
+            window.location.reload();
+        },
+        error: function (err) {
+            alert("error occured. Please check if you uploaded the pic or pushed no image button");
+        }
+    });
 });
 
 

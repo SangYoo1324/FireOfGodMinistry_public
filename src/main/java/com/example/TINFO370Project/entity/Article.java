@@ -30,11 +30,19 @@ public class Article {
     @Column
     private Timestamp creation;
 
+    @Column
+    private String thumbnailUrl;
+
     @Builder
-    public Article(Long id, String title, String body, Timestamp creation) {
+
+    public Article(Long id, String title, String subTitle, String body,
+                   Timestamp date, Timestamp creation, String thumbnailUrl) {
         this.id = id;
         this.title = title;
+        this.subTitle = subTitle;
         this.body = body;
+        this.date = date;
         this.creation = creation;
+        this.thumbnailUrl = thumbnailUrl;
     }
 }

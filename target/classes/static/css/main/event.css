@@ -59,21 +59,25 @@ section.event{
     opacity: 0.9;
 }
 .box_title_wrap{
-    flex-grow: 1;
+   width: 50%;
 }
 .box_title_wrap>h1{
+    text-align: center;
     font-size: 30px;
     font-weight: bold;
     color: white;
     padding-bottom: 15px;
 }
 .box_title_wrap>p{
+    text-align: center;
     font-size: 20px;
     color: white;
 }
 
 .thumbnail{
-    flex-grow: 0.7;
+    width: 20%;
+    /*flex-grow: 0.7;*/
+    max-width: 200px;
 }
 
 .thumbnail>img{
@@ -83,9 +87,10 @@ section.event{
 }
 
 .calendar{
+    width: 20%;
     font-size: 20px;
     color: white;
-    flex-grow: 1;
+    /*flex-grow: 1;*/
 }
 .view_detail{
     padding: 0 10px;
