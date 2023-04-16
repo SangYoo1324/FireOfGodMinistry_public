@@ -35,6 +35,7 @@ public class PageController {
 
         //EventPost Model import
         List<Article> articleList = articleRepository.findAll();
+
         model.addAttribute("eventPost",articleList);
         return "page/main";
     }

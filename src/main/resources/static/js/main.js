@@ -102,8 +102,8 @@ $('.subscribe_btn').on('click',function (){
 $('.view_detail').on('click',function() {
     console.log($(this).siblings().eq(1).children().eq(1).html());
     let title = $(this).siblings().eq(1).children().eq(0).html()
-    let body = $(this).attr('data-bs-body');
+    let body = $(this).siblings().eq(3).html()
     console.log(body);
     $('.modal-title').html(title);
-    $('.modal_con ').html(body);
+    $('.modal_con>.content_wrap').html(body);
 });

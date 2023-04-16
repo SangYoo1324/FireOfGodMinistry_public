@@ -7,12 +7,14 @@ section:nth-child(2n+1){
     background-color: #F4F3EA;
     height: 500px;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 section:nth-child(2n){
     background-color: black;
     height: 500px;
     overflow: scroll;
+    overflow-x: hidden;
     color: white;
 }
 
