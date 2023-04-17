@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,8 +36,11 @@ public class PageController {
 
         //EventPost Model import
         List<Article> articleList = articleRepository.findAll();
+       List<Article> sortedArticleList = articleList.stream().sorted(Comparator.comparing(Article::getDate))
+               .limit(4).collect(Collectors.toList());
+        articleList.stream().forEach((e)->log.info(e.getDate().toString()));
 
-        model.addAttribute("eventPost",articleList);
+        model.addAttribute("eventPost",sortedArticleList);
         return "page/main";
     }
 
